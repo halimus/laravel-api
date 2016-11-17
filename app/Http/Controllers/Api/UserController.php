@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Dingo\Api\Routing\Helpers;
 use App\User;
 use JWTAuth;
+use Illuminate\Support\Facades\Validator;
 
 
 
@@ -38,7 +39,17 @@ class UserController extends Controller {
         $currentUser = JWTAuth::parseToken()->authenticate(); //retrieve our user data from the token
         
         $input = $request->all();
+        
+        
+        $validator = $this->validator($input);
+
+        if ($validator->fails()) {
+            return $this->response->error($validator->errors(), 422);
+            //return $this->response->errorInternal($validator->errors());
+        }
+        
         $input['password'] = bcrypt($request['password']);
+        
 
         if(User::create($input)){
             return $this->response->created();
@@ -127,6 +138,17 @@ class UserController extends Controller {
            return $this->response->error('could_not_delete_user', 500); 
         }
          
+    }
+    
+    /*
+     * 
+     */
+    private function validator($data){
+        return Validator::make($data, [
+          'name' => 'required|max:10',
+          'email' => 'required|unique:users',
+          'password' => 'required|min:6'
+        ]);
     }
 
 }
