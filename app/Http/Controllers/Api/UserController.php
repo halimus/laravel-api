@@ -44,8 +44,9 @@ class UserController extends Controller {
         $validator = $this->validator($input);
 
         if ($validator->fails()) {
-            return $this->response->error($validator->errors(), 422);
+            //return $this->response->error($validator->errors(), 400);
             //return $this->response->errorInternal($validator->errors());
+            return $this->response->errorBadRequest($validator->errors());
         }
         
         $input['password'] = bcrypt($request['password']);
@@ -99,6 +100,16 @@ class UserController extends Controller {
         }
         
         $input = $request->all();
+        
+        //$arr = get_defined_vars();
+        //return $arr;
+        
+        $validator = $this->validator($input);
+
+        if ($validator->fails()) {
+            return $this->response->errorBadRequest($validator->errors());
+        }
+        
         
         if(isset($request['password'])){
             $input['password'] = bcrypt($request['password']);
