@@ -28,7 +28,13 @@ class Kernel extends HttpKernel
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-            \App\Http\Middleware\VerifyCsrfToken::class,
+            
+            /* By default, Laravel has CSRF token verification turned on, but since we’re using JWTs in a 
+               stateless manner now, we don’t really need CSRF tokens. We can turn this default 
+               behavior off by commenting out the
+             */
+            // \App\Http\Middleware\VerifyCsrfToken::class,   
+            
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
@@ -52,5 +58,12 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        
+        //'jwt.auth' => Tymon\JWTAuth\Middleware\GetUserFromToken::class,
+        //'jwt.refresh' => TymonJWTAuth\Middleware\RefreshToken::class,
+     
+        'jwt.auth' => 'Tymon\JWTAuth\Middleware\GetUserFromToken',
+        'jwt.refresh' => 'Tymon\JWTAuth\Middleware\RefreshToken',
+         
     ];
 }
