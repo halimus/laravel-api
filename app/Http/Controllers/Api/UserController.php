@@ -41,7 +41,16 @@ class UserController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        //
+        
+        $input = $request->all();
+        $input['password'] = bcrypt($request['password']);
+
+        if(User::create($input)){
+            return $this->response->created();
+        }
+        else
+           return $this->response->error('could_not_create_user', 500);
+
     }
 
     /**
