@@ -101,10 +101,13 @@ class UserController extends Controller {
             return $this->response->error('User not found', 404);
         }
         
-        $user->delete();
-        return $this->response->success('Article has been deleted', 200);
-
-        
+        if($user->delete()){
+            return $this->response->noContent();
+        }
+        else{
+           return $this->response->error('could_not_delete_user', 500); 
+        }
+         
     }
 
 }
