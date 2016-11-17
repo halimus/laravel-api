@@ -21,7 +21,7 @@ class UserController extends Controller {
     public function index() {
 
         $users = User::all();
-
+        
         return response()->json(['results' => $users]);
     }
 
@@ -94,7 +94,17 @@ class UserController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy($id) {
-        //
+        
+        $user = User::find($id);
+        
+        if (!$user) {
+            return $this->response->error('User not found', 404);
+        }
+        
+        $user->delete();
+        return $this->response->success('Article has been deleted', 200);
+
+        
     }
 
 }
