@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Dingo\Api\Routing\Helpers;
 use App\User;
+use JWTAuth;
 
 
 
@@ -19,7 +20,7 @@ class UserController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-
+        
         $users = User::all();
         
         return response()->json(['results' => $users]);
@@ -33,6 +34,8 @@ class UserController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
+        
+        $currentUser = JWTAuth::parseToken()->authenticate(); //retrieve our user data from the token
         
         $input = $request->all();
         $input['password'] = bcrypt($request['password']);
@@ -77,6 +80,8 @@ class UserController extends Controller {
      */
     public function update(Request $request, $id) {
         
+        $currentUser = JWTAuth::parseToken()->authenticate(); //retrieve our user data from the token
+         
         $user = User::find($id);
         if (!$user) {
             return $this->response->error('User not found', 404);
@@ -106,6 +111,8 @@ class UserController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy($id) {
+        
+        $currentUser = JWTAuth::parseToken()->authenticate(); //retrieve our user data from the token
         
         $user = User::find($id);
         
