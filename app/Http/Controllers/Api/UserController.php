@@ -4,11 +4,15 @@ namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\User;
 use Dingo\Api\Routing\Helpers;
+use App\User;
+
+
 
 class UserController extends Controller {
 
+    use Helpers;
+    
     /**
      * Display a listing of the resource.
      *
@@ -51,9 +55,12 @@ class UserController extends Controller {
         $user = User::find($id);
 
         if (!$user) {
-            //return response()->json(['message' => 'User not found'], 404);
-           return $this->response->error('This is an error.', 404);
+            //return response()->json(['error' => ['message' => 'Joke does not exist', 'status_code'=> '404']], 404);
+            //return response()->json(['message' => 'User not found', 'status_code'=> '404'], 404);
+            
+            //Using Dingo Helpers
             //return $this->response->errorNotFound();
+            return $this->response->error('User not found', 404);
         }
         
         return response()->json(['result' => $user]);
