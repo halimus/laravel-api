@@ -24,16 +24,8 @@ class UserController extends Controller {
         
         return response()->json(['results' => $users]);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create() {
-        //
-    }
-
+    
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -75,15 +67,6 @@ class UserController extends Controller {
         return response()->json(['result' => $user]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id) {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -93,7 +76,27 @@ class UserController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id) {
-        //
+        
+        $user = User::find($id);
+        if (!$user) {
+            return $this->response->error('User not found', 404);
+        }
+        
+        $input = $request->all();
+        
+        if(isset($request['password'])){
+            $input['password'] = bcrypt($request['password']);
+        }
+ 
+        $user->fill($input);
+        
+        if($user->save()){
+            return $this->response->noContent();
+        }
+        else{
+            return $this->response->error('could_not_update_book', 500);
+        }
+        
     }
 
     /**
