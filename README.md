@@ -1,5 +1,7 @@
 # JWT Laravel API
 
+This example use [The Dingo API package](https://github.com/dingo/api/) and [jwt-auth](https://github.com/tymondesigns/jwt-auth)
+
 ###Step 1 : Use Composer to install dependencies
 
     cd /path/to/laravel-api
@@ -16,7 +18,7 @@
        API_VERSION=v1
        API_DEBUG=false
        
-   for more detail about JWT please check the [documentation](https://github.com/tymondesigns/jwt-auth)
+   for more detail about JWT please check the [documentation](https://github.com/tymondesigns/jwt-auth/wiki)
    
 ###Step 3 Run migrations
 
