@@ -35,3 +35,15 @@ This example use [The Dingo API package](https://github.com/dingo/api/) and [jwt
 
 ![alt tag](https://github.com/halimus/laravel-api/blob/master/public/images/1.JPG)
 
+![alt tag](https://github.com/halimus/laravel-api/blob/master/public/images/2.JPG)
+
+![alt tag](https://github.com/halimus/laravel-api/blob/master/public/images/3.JPG)
+
+![alt tag](https://github.com/halimus/laravel-api/blob/master/public/images/4.JPG)
+
+![alt tag](https://github.com/halimus/laravel-api/blob/master/public/images/5.JPG)
+
+![alt tag](https://github.com/halimus/laravel-api/blob/master/public/images/6.JPG)
+
+![alt tag](https://github.com/halimus/laravel-api/blob/master/public/images/7.JPG)
+
