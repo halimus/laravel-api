@@ -9,6 +9,15 @@
 ###Step 2: Create Database
    Create Database in Your local MySQL (choose name), And configure that name in your .env file.
    
+   Make sure also to out at  API_PREFIX=api in your .env file Like this 
+   
+       API_PREFIX=api
+       API_NAME="My API"
+       API_VERSION=v1
+       API_DEBUG=false
+       
+   for more detail about JWT please check the documentation
+   
 ###Step 3 Run migrations
 
     >php artisan migrate
