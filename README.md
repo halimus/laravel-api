@@ -33,6 +33,7 @@ This example use [The Dingo API package](https://github.com/dingo/api/) and [jwt
 
 ###Start Accessing the Demo
 
+#### Get all users
 ![alt tag](https://github.com/halimus/laravel-api/blob/master/public/images/1.JPG)
 
 ![alt tag](https://github.com/halimus/laravel-api/blob/master/public/images/2.JPG)
