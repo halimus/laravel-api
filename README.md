@@ -2,7 +2,7 @@
 
 ###Step 1 : Use Composer to install dependencies
 
-    cd /path/to/laravel-crud
+    cd /path/to/laravel-api
 
     composer install
     
