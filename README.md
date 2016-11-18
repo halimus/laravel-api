@@ -16,7 +16,7 @@
        API_VERSION=v1
        API_DEBUG=false
        
-   for more detail about JWT please check the documentation
+   for more detail about JWT please check the documentation [I'm an inline-style link](https://www.google.com)
    
 ###Step 3 Run migrations
 
