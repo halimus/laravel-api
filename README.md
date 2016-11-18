@@ -58,3 +58,6 @@ This example use [The Dingo API package](https://github.com/dingo/api/) and [jwt
 ### Data validation:
 ![alt tag](https://github.com/halimus/laravel-api/blob/master/public/images/7.JPG)
 
+### There is also methods for update and delete as well
+
+
