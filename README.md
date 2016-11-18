@@ -33,18 +33,28 @@ This example use [The Dingo API package](https://github.com/dingo/api/) and [jwt
 
 ###Start Accessing the Demo
 
-#### Get all users
+### Get all Users:
+
 ![alt tag](https://github.com/halimus/laravel-api/blob/master/public/images/1.JPG)
+
+### Get specific User:
 
 ![alt tag](https://github.com/halimus/laravel-api/blob/master/public/images/2.JPG)
 
+### Creating User:
+
 ![alt tag](https://github.com/halimus/laravel-api/blob/master/public/images/3.JPG)
+
+### Generating Token:
 
 ![alt tag](https://github.com/halimus/laravel-api/blob/master/public/images/4.JPG)
 
+### Implementation of Token:
 ![alt tag](https://github.com/halimus/laravel-api/blob/master/public/images/5.JPG)
 
+### Implementation of Token in Header:
 ![alt tag](https://github.com/halimus/laravel-api/blob/master/public/images/6.JPG)
 
+### Data validation:
 ![alt tag](https://github.com/halimus/laravel-api/blob/master/public/images/7.JPG)
 
