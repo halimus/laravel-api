@@ -1,2 +1,2 @@
-# laravel-api3
-Example 3
+# JWT Laravel API
+
