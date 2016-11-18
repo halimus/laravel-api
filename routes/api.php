@@ -20,6 +20,7 @@ $api = app('Dingo\Api\Routing\Router');
 //})->middleware('auth:api');
 
 
+
 $api->version('v1', function ($api) {
    
     $api->get('users', 'App\Http\Controllers\Api\UserController@index');
