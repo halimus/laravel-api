@@ -1,4 +1,8 @@
-<<<<<<< HEAD
-/vendor/
-=======
->>>>>>> origin/master
+/node_modules
+/public/storage
+/vendor
+/.idea
+Homestead.json
+Homestead.yaml
+.env
+/nbproject
